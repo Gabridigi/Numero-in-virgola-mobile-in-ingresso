@@ -6,37 +6,22 @@ public class App {
         double numero = in.nextDouble();
         if (numero<0)
         {
-            if(Math.abs(numero)<1)
-            {
-                System.out.println("Il numero è negativo");
-                System.out.println("Small");
-            }
-            else
-            {
-                System.out.println("Il numero è negativo");
-            }
-            
+           System.out.println("Il numero è negativo");    
         }
         else if(numero>0)
         {
-            if(numero>1000000)
-            {
-                System.out.println("Il numero è positivo"); 
-                System.out.println("Large");  
-            }
-            else if(Math.abs(numero)<1)
-            {
-                System.out.println("Il numero è positivo");
-                System.out.println("Small");
-            }
-            else
-            {
-                System.out.println("Il numero è positivo");
-            }
+            System.out.println("Il numero è positivo");
         }
-        else if (numero==0)
+        else   //qui non ha bisogno di numero == 0 perché è sicuramente 0 :)
         {
             System.out.println("Il numero è zero");
+        }
+        
+        if(Math.abs(numero) < 1){
+            System.out.println("Small");
+        }
+        else if(Math.abs(numero) > 1000000){   //qui invece serve assolutamente else if perché la condizione è cruciale!! Bisogna usare else if invece che solo if cosìcche se l'if sovrastante (riga 20) ha lavorato allora il programma non perde tempo ad eseguire else if. (piccola nota per maggiore comprensione)
+            System.out.println("Large");
         }
     }
 }
